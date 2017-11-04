@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.drarchita.datecalculator.activities.NextDateActivity">
+
+    <RelativeLayout
+        android:id="@+id/nd_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/nd_start_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/nd_date_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="@string/next_date_name" />
+
+            <EditText
+                android:id="@+id/nd_date"
+                android:inputType="date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nd_date_name"
+                android:hint="@string/next_date_hint" />
+
+            <TextView
+                android:id="@+id/nd_weeks_name"
+                android:layout_below="@+id/nd_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/next_weeks_name" />
+
+            <EditText
+                android:id="@+id/nd_weeks"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nd_weeks_name"
+                android:hint="@string/next_weeks_hint" />
+
+            <TextView
+                android:id="@+id/nd_days_name"
+                android:layout_below="@+id/nd_weeks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/next_days_name" />
+
+            <EditText
+                android:id="@+id/nd_days"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nd_days_name"
+                android:hint="@string/next_days_hint" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/nd_submit"
+            android:text="@string/text_submit"
+            android:layout_below="@+id/nd_start_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/nd_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/nd_result_text"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.drarchita.datecalculator.activities.BetweenDatesActivity">
+
+    <RelativeLayout
+        android:id="@+id/bd_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/start_rel_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/start_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="Start Date" />
+
+            <EditText
+                android:id="@+id/start_date"
+                android:inputType="date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/start_name"
+                android:hint="Start Date" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/end_rel_layout"
+            android:layout_below="@id/start_rel_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/end_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="End Date" />
+
+            <EditText
+                android:id="@+id/end_date"
+                android:inputType="date"
+                android:layout_below="@id/end_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="End Date" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/bd_submit"
+            android:text="@string/text_submit"
+            android:layout_below="@+id/end_rel_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/bd_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/bd_result_text"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
