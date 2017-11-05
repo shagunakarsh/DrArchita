@@ -19,7 +19,7 @@ import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by Shagun on 05-11-2017.
@@ -81,9 +81,14 @@ public class NextDateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                LocalDate nextDate = DateUtils.addToDate(String.valueOf(ndDate.getText()), "0",
-                        String.valueOf(ndWeeks.getText()), String.valueOf(ndDays.getText()));
-                ndResult.setText(dateTimeFormatter.print(nextDate));
+                String ndDateText = String.valueOf(ndDate.getText());
+                if(StringUtils.isBlank(ndDateText)) {
+                    ndDateText = dateTimeFormatter.print(new DateTime());
+                }
+                LocalDate nextDate = DateUtils.addToDate(ndDateText, "0",
+                        String.valueOf(ndWeeks.getText()), ndDateText);
+                String ndDayOfWeek = nextDate.dayOfWeek().getAsText(Locale.US);
+                ndResult.setText("Next Date: " + dateTimeFormatter.print(nextDate) + " (" + ndDayOfWeek + ")");
             }
         });
     }

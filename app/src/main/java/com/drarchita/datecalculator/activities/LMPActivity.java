@@ -3,9 +3,7 @@ package com.drarchita.datecalculator.activities;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputType;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -21,14 +19,13 @@ import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import java.util.Calendar;
-
 /**
  * Created by Shagun on 05-11-2017.
  */
 
 public class LMPActivity extends AppCompatActivity {
 
+    private static final double POG_THRESHOLD = 40.0;
     private EditText lmpDate;
     private TextView lmpResult;
     private DatePickerDialog datePickerDialog;
@@ -51,11 +48,12 @@ public class LMPActivity extends AppCompatActivity {
         init();
         reset();
 
+        final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
+
         lmpDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DateTime dateTime = new DateTime();
-                final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
                 if(StringUtils.isNotBlank(lmpDate.getText())) {
                     dateTime = dateTimeFormatter.parseDateTime(String.valueOf(lmpDate.getText()));
                 }
@@ -77,17 +75,19 @@ public class LMPActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //calculate lmp
-                LocalDate edd = DateUtils.addToDate(String.valueOf(lmpDate.getText()),
+                String lmpDateText = String.valueOf(lmpDate.getText());
+                if(StringUtils.isBlank(lmpDateText)) {
+                    lmpDateText = dateTimeFormatter.print(new DateTime());
+                }
+                LocalDate edd = DateUtils.addToDate(lmpDateText,
                         "9", "0", "7");
 
-                DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
-
-                int days = DateUtils.betweenDates(String.valueOf(lmpDate.getText()),
+                int days = DateUtils.betweenDates(lmpDateText,
                         dateTimeFormatter.print(new DateTime()));
 
                 double pog = days/7.0;
                 String result = "Expected Date of Delivery: " + edd.toString();
-                if(pog > 40.0) {
+                if(pog > POG_THRESHOLD) {
                     result = "Wrong dates, POG is " + (days/7) + " weeks, " + (days%7) + " days";
                 } else {
                     result = result + ",\nPOG is " + (days/7) + " weeks, " + (days%7) + " days";

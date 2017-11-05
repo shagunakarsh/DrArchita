@@ -6,11 +6,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.joda.time.Days;
 import org.joda.time.format.DateTimeFormat;
 
-import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-
 /**
  * Created by Shagun on 05-11-2017.
  */
@@ -25,21 +20,12 @@ public final class DateUtils {
         int days = 0;
 
         if(StringUtils.isNotBlank(startDate) && StringUtils.isNotBlank(endDate)) {
-           /* if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(Constants.DATE_FORMAT);
-                LocalDate startDt = LocalDate.parse(startDate, dateTimeFormatter);
-                LocalDate endDt = LocalDate.parse(endDate, dateTimeFormatter);
 
-                days = Period.between(startDt, endDt).getDays();
+            org.joda.time.format.DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
+            org.joda.time.LocalDate startDt = org.joda.time.LocalDate.parse(startDate, dateTimeFormatter);
+            org.joda.time.LocalDate endDt = org.joda.time.LocalDate.parse(endDate, dateTimeFormatter);
 
-            } else*/ {
-
-                org.joda.time.format.DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
-                org.joda.time.LocalDate startDt = org.joda.time.LocalDate.parse(startDate, dateTimeFormatter);
-                org.joda.time.LocalDate endDt = org.joda.time.LocalDate.parse(endDate, dateTimeFormatter);
-
-                days = Days.daysBetween(startDt, endDt).getDays();
-            }
+            days = Days.daysBetween(startDt, endDt).getDays();
         }
 
         return days;

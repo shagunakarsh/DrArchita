@@ -9,6 +9,9 @@
 
     <RelativeLayout
         android:id="@+id/lmp_parent"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
@@ -17,10 +20,11 @@
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/lmp_name"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:text="LMP" />
+                android:text="@string/LMP" />
 
             <EditText
                 android:id="@+id/lmp_date"
@@ -28,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lmp_name"
-                android:hint="LMP Date" />
+                android:hint="@string/lmp_date" />
 
         </RelativeLayout>
 
@@ -44,11 +48,15 @@
 
     <RelativeLayout
         android:layout_below="@+id/lmp_parent"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/lmp_result_text"
+            android:textStyle="bold"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

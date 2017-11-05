@@ -8,6 +8,9 @@
 
     <RelativeLayout
         android:id="@+id/m_parent"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -19,21 +22,21 @@
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LMP" />
+                android:text="@string/LMP" />
             <Button
                 android:id="@+id/between_button"
                 android:layout_below="@+id/lmp_button"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Between Dates" />
+                android:text="@string/between_dates" />
             <Button
                 android:id="@+id/next_button"
                 android:layout_below="@+id/between_button"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Next Date" />
+                android:text="@string/next_date" />
         </RelativeLayout>
 
     </RelativeLayout>

@@ -14,9 +14,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_lmp">LMPActivity</string>
+    <string name="title_activity_lmp">LMP Activity</string>
     <string name="title_between_dates_activity">Between Dates Activity</string>
-    <string name="next_date_activity">NextDateActivity</string>
+    <string name="next_date_activity">Next Date Activity</string>
     <string name="text_submit">Submit</string>
     <string name="next_date_name">Next Date</string>
     <string name="next_date_hint">Next Date</string>
@@ -24,4 +24,10 @@
     <string name="next_weeks_hint">weeks</string>
     <string name="next_days_name">days</string>
     <string name="next_days_hint">days</string>
+    <string name="LMP">LMP</string>
+    <string name="between_dates">Between Dates</string>
+    <string name="next_date">Next Date</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="lmp_date">LMP Date</string>
 </resources>

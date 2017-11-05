@@ -9,18 +9,22 @@
 
     <RelativeLayout
         android:id="@+id/bd_parent"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
             android:id="@+id/start_rel_layout"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/start_name"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:text="Start Date" />
+                android:text="@string/start_date" />
 
             <EditText
                 android:id="@+id/start_date"
@@ -28,20 +32,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/start_name"
-                android:hint="Start Date" />
+                android:hint="@string/start_date" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/end_rel_layout"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_below="@id/start_rel_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/end_name"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="End Date" />
+                android:text="@string/end_date" />
 
             <EditText
                 android:id="@+id/end_date"
@@ -49,7 +55,7 @@
                 android:layout_below="@id/end_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="End Date" />
+                android:hint="@string/end_date" />
         </RelativeLayout>
 
         <Button
@@ -64,11 +70,15 @@
 
     <RelativeLayout
         android:layout_below="@+id/bd_parent"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/bd_result_text"
+            android:textStyle="bold"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
