@@ -63,7 +63,7 @@ public class BetweenDatesActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                                startDate.setText(day+"/"+month+"/"+year);
+                                startDate.setText(day+"/"+(month+1)+"/"+year);
                             }
                         }, dateTime.getYear(),
                         dateTime.getMonthOfYear()-1,
