@@ -41,7 +41,7 @@ public final class DateUtils {
             m = 0;
             w = 0;
             d = 0;
-            Log.e(TAG, "Invalid numbers passed");
+            Log.e(TAG, "Invalid numbers passed, m: " + months + " w: " + weeks + " d: " + days);
         }
 
         org.joda.time.format.DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);

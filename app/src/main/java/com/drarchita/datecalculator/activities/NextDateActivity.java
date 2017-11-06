@@ -85,8 +85,16 @@ public class NextDateActivity extends AppCompatActivity {
                 if(StringUtils.isBlank(ndDateText)) {
                     ndDateText = dateTimeFormatter.print(new DateTime());
                 }
+                String ndWeeksText = String.valueOf(ndWeeks.getText());
+                if(StringUtils.isBlank(ndWeeks.getText())) {
+                    ndWeeksText = "0";
+                }
+                String ndDaysText = String.valueOf(ndDays.getText());
+                if(StringUtils.isBlank(ndDaysText)) {
+                    ndDaysText = "0";
+                }
                 LocalDate nextDate = DateUtils.addToDate(ndDateText, "0",
-                        String.valueOf(ndWeeks.getText()), ndDateText);
+                        ndWeeksText, ndDaysText);
                 String ndDayOfWeek = nextDate.dayOfWeek().getAsText(Locale.US);
                 ndResult.setText("Next Date: " + dateTimeFormatter.print(nextDate) + " (" + ndDayOfWeek + ")");
             }
