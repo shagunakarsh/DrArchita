@@ -50,6 +50,7 @@ public class LMPActivity extends AppCompatActivity {
 
         final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
 
+        lmpDate.setShowSoftInputOnFocus(false);
         lmpDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

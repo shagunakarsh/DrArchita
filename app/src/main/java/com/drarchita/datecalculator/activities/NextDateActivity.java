@@ -57,6 +57,7 @@ public class NextDateActivity extends AppCompatActivity {
 
         final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
 
+        ndDate.setShowSoftInputOnFocus(false);
         ndDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

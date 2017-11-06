@@ -51,6 +51,7 @@ public class BetweenDatesActivity extends AppCompatActivity {
 
         final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
 
+        startDate.setShowSoftInputOnFocus(false);
         startDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +72,7 @@ public class BetweenDatesActivity extends AppCompatActivity {
             }
         });
 
+        endDate.setShowSoftInputOnFocus(false);
         endDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
