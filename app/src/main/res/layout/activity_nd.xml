@@ -1,99 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.drarchita.datecalculator.activities.NextDateActivity">
 
-    <RelativeLayout
-        android:id="@+id/nd_parent"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RelativeLayout
-            android:id="@+id/nd_start_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/nd_date_name"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:text="@string/next_date_name" />
 
-            <EditText
-                android:id="@+id/nd_date"
-                android:inputType="date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/nd_date_name"
-                android:hint="@string/next_date_hint" />
+    <TextView
+        android:id="@+id/nd_date_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/next_date_name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/nd_weeks_name"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:textStyle="bold"
-                android:layout_below="@+id/nd_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/next_weeks_name" />
+    <EditText
+        android:id="@+id/nd_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:hint="@string/next_date_hint"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nd_date_name" />
 
-            <EditText
-                android:id="@+id/nd_weeks"
-                android:inputType="number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/nd_weeks_name"
-                android:hint="@string/next_weeks_hint" />
+    <TextView
+        android:id="@+id/nd_weeks_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/next_weeks_name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nd_date" />
 
-            <TextView
-                android:id="@+id/nd_days_name"
-                android:layout_below="@+id/nd_weeks"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/next_days_name" />
+    <EditText
+        android:id="@+id/nd_weeks"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:hint="@string/next_weeks_hint"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nd_weeks_name" />
 
-            <EditText
-                android:id="@+id/nd_days"
-                android:inputType="number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/nd_days_name"
-                android:hint="@string/next_days_hint" />
+    <TextView
+        android:id="@+id/nd_days_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/next_days_name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nd_weeks" />
 
-        </RelativeLayout>
+    <EditText
+        android:id="@+id/nd_days"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:hint="@string/next_days_hint"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nd_days_name" />
 
-        <Button
-            android:id="@+id/nd_submit"
-            android:text="@string/text_submit"
-            android:layout_below="@+id/nd_start_layout"
-            android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
-    </RelativeLayout>
+    <Button
+        android:id="@+id/nd_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:text="@string/text_submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nd_days" />
 
-    <RelativeLayout
-        android:layout_below="@+id/nd_parent"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/nd_result_text"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/nd_result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nd_submit" />
 
-    </RelativeLayout>
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
