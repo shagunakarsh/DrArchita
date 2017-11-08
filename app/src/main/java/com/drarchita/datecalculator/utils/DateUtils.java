@@ -14,7 +14,7 @@ public final class DateUtils {
 
     private static final String TAG = DateUtils.class.getName();
 
-    private DateUtils(){};
+    private DateUtils(){}
 
     public static int betweenDates(String startDate, String endDate) {
         int days = 0;
