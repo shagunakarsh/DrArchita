@@ -3,6 +3,7 @@ package com.drarchita.datecalculator.activities;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -29,16 +30,14 @@ public class BetweenDatesActivity extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
     private Button submit;
     private TextView resultsView;
+    private Toolbar toolbar;
 
     protected void init() {
         startDate = findViewById(R.id.start_date);
         endDate = findViewById(R.id.end_date);
         submit = findViewById(R.id.bd_submit);
         resultsView = findViewById(R.id.bd_result_text);
-    }
-
-    protected void reset() {
-
+        toolbar = findViewById(R.id.bd_toolbar);
     }
 
     @Override
@@ -47,7 +46,8 @@ public class BetweenDatesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bd);
 
         init();
-        reset();
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
 

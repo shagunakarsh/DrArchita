@@ -3,6 +3,7 @@ package com.drarchita.datecalculator.activities;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -30,14 +31,13 @@ public class LMPActivity extends AppCompatActivity {
     private TextView lmpResult;
     private DatePickerDialog datePickerDialog;
     private Button submit;
+    private Toolbar toolbar;
 
     protected void init() {
         lmpDate = findViewById(R.id.lmp_date);
         lmpResult = findViewById(R.id.lmp_result_text);
         submit = findViewById(R.id.lmp_submit);
-    }
-
-    protected void reset() {
+        toolbar = findViewById(R.id.lmp_toolbar);
     }
 
     @Override
@@ -46,7 +46,8 @@ public class LMPActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lmp);
 
         init();
-        reset();
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
 

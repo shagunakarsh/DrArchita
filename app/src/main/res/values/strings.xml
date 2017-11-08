@@ -30,4 +30,6 @@
     <string name="start_date">Start Date</string>
     <string name="end_date">End Date</string>
     <string name="lmp_date">LMP Date</string>
+    <string name="favourite">favourite</string>
+    <string name="refresh">refresh</string>
 </resources>

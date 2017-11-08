@@ -3,6 +3,7 @@ package com.drarchita.datecalculator.activities;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -33,6 +34,7 @@ public class NextDateActivity extends AppCompatActivity {
     private TextView ndResult;
     private DatePickerDialog datePickerDialog;
     private Button submit;
+    private Toolbar toolbar;
 
     protected void init() {
 
@@ -41,11 +43,9 @@ public class NextDateActivity extends AppCompatActivity {
         ndDays = findViewById(R.id.nd_days);
         ndResult = findViewById(R.id.nd_result_text);
         submit = findViewById(R.id.nd_submit);
+        toolbar = findViewById(R.id.nd_toolbar);
     }
 
-    protected void reset() {
-
-    }
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -53,7 +53,8 @@ public class NextDateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nd);
 
         init();
-        reset();
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);
 

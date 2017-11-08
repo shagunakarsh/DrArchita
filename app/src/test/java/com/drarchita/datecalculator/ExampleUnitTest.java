@@ -16,10 +16,4 @@ public class ExampleUnitTest {
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
-
-    @Test
-    public void utilTest() {
-        int days = DateUtils.betweenDates("2/04/2017","2/03/2017");
-        System.out.println(days);
-    }
 }
