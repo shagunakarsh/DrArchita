@@ -2,8 +2,6 @@ package com.drarchita.datecalculator.activities;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -23,21 +21,21 @@ import org.joda.time.format.DateTimeFormatter;
  * Created by Shagun on 05-11-2017.
  */
 
-public class BetweenDatesActivity extends AppCompatActivity {
+public class BetweenDatesActivity extends BaseActivity {
 
     private EditText startDate;
     private EditText endDate;
     private DatePickerDialog datePickerDialog;
     private Button submit;
     private TextView resultsView;
-    private Toolbar toolbar;
 
+    @Override
     protected void init() {
+        super.init();
         startDate = findViewById(R.id.start_date);
         endDate = findViewById(R.id.end_date);
         submit = findViewById(R.id.bd_submit);
         resultsView = findViewById(R.id.bd_result_text);
-        toolbar = findViewById(R.id.bd_toolbar);
     }
 
     @Override
@@ -46,7 +44,6 @@ public class BetweenDatesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bd);
 
         init();
-        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);

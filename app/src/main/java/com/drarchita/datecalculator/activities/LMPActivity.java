@@ -2,8 +2,6 @@ package com.drarchita.datecalculator.activities;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -24,29 +22,28 @@ import org.joda.time.format.DateTimeFormatter;
  * Created by Shagun on 05-11-2017.
  */
 
-public class LMPActivity extends AppCompatActivity {
+public class LMPActivity extends BaseActivity {
 
     private static final double POG_THRESHOLD = 40.0;
     private EditText lmpDate;
     private TextView lmpResult;
     private DatePickerDialog datePickerDialog;
     private Button submit;
-    private Toolbar toolbar;
 
+    @Override
     protected void init() {
+        super.init();
         lmpDate = findViewById(R.id.lmp_date);
         lmpResult = findViewById(R.id.lmp_result_text);
         submit = findViewById(R.id.lmp_submit);
-        toolbar = findViewById(R.id.lmp_toolbar);
     }
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lmp);
-
         init();
-        setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_FORMAT);

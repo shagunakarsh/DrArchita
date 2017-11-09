@@ -7,28 +7,17 @@
     android:layout_height="match_parent"
     tools:context="com.drarchita.datecalculator.activities.BetweenDatesActivity">
 
-    <android.support.v7.widget.Toolbar
+    <include
         android:id="@+id/bd_toolbar"
+        layout="@layout/activity_base"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:layout_constraintBottom_toTopOf="@+id/start_name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:layout_constraintBottom_toTopOf="@+id/start_name"/>
 
     <TextView
         android:id="@+id/start_name"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
@@ -81,11 +70,11 @@
         android:layout_marginTop="4dp"
         android:hint="@string/end_date"
         android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/bd_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/end_name"
-        app:layout_constraintBottom_toTopOf="@+id/bd_submit"/>
+        app:layout_constraintTop_toBottomOf="@+id/end_name" />
 
 
     <Button
