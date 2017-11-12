@@ -1,5 +1,10 @@
 language: android
 android:
 	components:
-		- build-tools-19.1.0
+		- tools
+		- platform-tools
+		- tools
+		- build-tools-27.0.0
 		- android-27
+		- add-on
+		- extra
